@@ -2,10 +2,10 @@
 
 use Amouhzi\PaypalCsvParser\Statement;
 
-return array(
-    array(
+return [
+    [
         'name' => null,
-        'type' => 'Virement par carte bancaire standard',
+        'type' => Statement::TYPE_STANDARD_CREDIT_CARD_TRANSFER,
         'status' => Statement::STATUS_COMPLETED,
         'currency' => 'EUR',
         'gross' => 12.20,
@@ -69,7 +69,7 @@ return array(
         'payflowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-        'datetime' => new \DateTime('2014-01-31T21:33:40+01'),
+        'datetime' => new DateTime('2014-01-31T21:33:40+01'),
         'payFlowTransactionNumber' => null,
-    ),
-);
+    ],
+];

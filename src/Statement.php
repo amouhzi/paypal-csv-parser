@@ -4,11 +4,12 @@ namespace Amouhzi\PaypalCsvParser;
 
 class Statement
 {
-    const TYPE_CURRENCY_CONVERSION = 'Currency Conversion';
-    const TYPE_SHOPPING_CART_PAYMENT_SENT = 'Shopping Cart Payment Sent';
-    const TYPE_ORDER = 'Order';
     const TYPE_CHARGE_FROM_CREDIT_CARD = 'Charge from Credit Card';
+    const TYPE_CURRENCY_CONVERSION = 'Currency Conversion';
+    const TYPE_ORDER = 'Order';
     const TYPE_PAYPAL_EXPRESS_CHECKOUT_PAYMENT_SENT = 'PayPal Express Checkout Payment Sent';
+    const TYPE_SHOPPING_CART_PAYMENT_SENT = 'Shopping Cart Payment Sent';
+    const TYPE_STANDARD_CREDIT_CARD_TRANSFER = 'Standard credit card transfer';
 
     const STATUS_COMPLETED = 'Completed';
 

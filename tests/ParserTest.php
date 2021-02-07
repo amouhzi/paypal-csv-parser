@@ -13,7 +13,7 @@ class ParserTest extends TestCase
     /**
      * @throws InvalidPaypalCsvFile
      *
-     * @dataProvider testParseProvider
+     * @dataProvider parseProvider
      */
     public function testParse1($file)
     {
@@ -27,7 +27,7 @@ class ParserTest extends TestCase
         );
     }
 
-    public function testParseProvider()
+    public function parseProvider()
     {
         return [
             ['basic'], // https://raw.githubusercontent.com/cmbuckley/paypal-history/master/test/etc/csv/basic.csv

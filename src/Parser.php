@@ -101,7 +101,8 @@ class Parser
 
             unset($row['date'], $row['time'], $row['timeZone']);
 
-            $row['status'] = $this->fixStatus($row['status']);
+            $row['type'] = $this->translateType($row['type']);
+            $row['status'] = $this->translateStatus($row['status']);
 
             $object = new Statement();
 
@@ -130,7 +131,16 @@ class Parser
         });
     }
 
-    private function fixStatus($status)
+    private function translateType($type)
+    {
+        if ('Virement par carte bancaire standard' === $type) {
+            return Statement::TYPE_STANDARD_CREDIT_CARD_TRANSFER;
+        }
+
+        return $type;
+    }
+
+    private function translateStatus($status)
     {
         if ('Terminé' === $status) {
             return Statement::STATUS_COMPLETED;

@@ -31,7 +31,7 @@ return [
         'balance' => 21.36,
         'contactPhoneNumber' => null,
         'note' => null,
-        'balanceImpact' => 'Crédit',
+        'balanceImpact' => Statement::BALANCE_IMPACT_CREDIT,
         'datetime' => new DateTime('2015-02-21T23:43:11+01'),
         'otherPartyStatus' => null,
         'statusAddress' => null,

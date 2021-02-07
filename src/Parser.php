@@ -85,6 +85,7 @@ class Parser
                 unset($raw[$countHeaders]);
             }
 
+            /** @var array $row */
             $row = array_combine($headers, $raw);
 
             list($day, $month, $year) = explode('/', $row['date']);
@@ -103,6 +104,10 @@ class Parser
 
             $row['type'] = $this->translateType($row['type']);
             $row['status'] = $this->translateStatus($row['status']);
+
+            if (array_key_exists('balanceImpact', $row)) {
+                $row['balanceImpact'] = $this->translateBalanceImpact($row['balanceImpact']);
+            }
 
             $object = new Statement();
 
@@ -147,5 +152,18 @@ class Parser
         }
 
         return $status;
+    }
+
+    private function translateBalanceImpact($balanceImpact)
+    {
+        if ('Crédit' === $balanceImpact) {
+            return Statement::BALANCE_IMPACT_CREDIT;
+        }
+
+        if ('Débit' === $balanceImpact) {
+            return Statement::BALANCE_IMPACT_DEBIT;
+        }
+
+        return $balanceImpact;
     }
 }

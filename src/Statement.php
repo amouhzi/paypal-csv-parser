@@ -10,12 +10,12 @@ class Statement
     const TYPE_PAYPAL_EXPRESS_CHECKOUT_PAYMENT_SENT = 'PayPal Express Checkout Payment Sent';
     const TYPE_SHOPPING_CART_PAYMENT_SENT = 'Shopping Cart Payment Sent';
     const TYPE_STANDARD_CREDIT_CARD_TRANSFER = 'Standard credit card transfer';
+    const TYPE_SUBSCRIPTION_PAYMENT_SENT = 'Subscription Payment Sent';
 
     const STATUS_COMPLETED = 'Completed';
 
     const BALANCE_IMPACT_DEBIT = 'Debit';
     const BALANCE_IMPACT_CREDIT = 'Credit';
-    const TYPE_SUBSCRIPTION_PAYMENT_SENT = 'Subscription Payment Sent';
 
     public $datetime;
     public $name;

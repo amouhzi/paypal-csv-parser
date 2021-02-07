@@ -59,7 +59,7 @@ return [
         'authorizationCheckStatus' => null,
         'protectionEligibility' => 2,
         'countryCode' => null,
-        'balanceImpact' => 'Crédit',
+        'balanceImpact' => Statement::BALANCE_IMPACT_CREDIT,
         'buyerPortfolio' => null,
         'comment1' => null,
         'comment2' => null,

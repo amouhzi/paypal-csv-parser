@@ -4,8 +4,8 @@ namespace Amouhzi\PaypalCsvParser;
 
 class CsvHeaders
 {
-    private static $headers = array(
-        'fr' => array(
+    private static $headers = [
+        'fr' => [
             'date' => 'Date',
             'time' => 'Heure',
             'timeZone' => 'Fuseau horaire',
@@ -74,8 +74,8 @@ class CsvHeaders
             'payflowTransactionNumber' => 'Numéro de transaction Payflow (PNREF)',
             'tip' => 'Pourboire',
             'reduction' => 'Réduction',
-        ),
-        'en' => array(
+        ],
+        'en' => [
             'date' => 'Date',
             'time' => 'Time',
             'timeZone' => 'Time Zone',
@@ -144,10 +144,10 @@ class CsvHeaders
             'payflowTransactionNumber' => 'Numéro de transaction Payflow (PNREF)',
             'tip' => 'Pourboire',
             'reduction' => 'Réduction',
-        ),
-    );
+        ],
+    ];
 
-    private static $mandatoryHeaders = array(
+    private static $mandatoryHeaders = [
         'date',
         'time',
         'timeZone',
@@ -157,7 +157,7 @@ class CsvHeaders
         'currency',
         'receiptId',
         'balance',
-    );
+    ];
 
     public function isValid(array $headers)
     {
@@ -166,7 +166,7 @@ class CsvHeaders
 
     public function getHeaders(array $headers)
     {
-        $keys = array();
+        $keys = [];
 
         foreach (self::$headers as $group) {
             $groupCopy = $group;
@@ -175,7 +175,7 @@ class CsvHeaders
                 $key = array_search($header, $groupCopy, true);
 
                 if (false === $key) {
-                    $keys = array();
+                    $keys = [];
 
                     break;
                 }

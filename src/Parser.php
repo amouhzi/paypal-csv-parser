@@ -31,7 +31,7 @@ class Parser
         }
 
         $file = fopen($filePath, 'rb');
-        $line = $this->getFirstLine($file) ?: array();
+        $line = $this->getFirstLine($file) ?: [];
         fclose($file);
 
         return $this->csvHeaders->isValid($line);
@@ -63,7 +63,7 @@ class Parser
 
         $file = fopen($filePath, 'rb');
 
-        $data = array();
+        $data = [];
 
         $headers = $this->csvHeaders->getHeaders($this->getFirstLine($file));
         $countHeaders = count($headers);
@@ -76,7 +76,7 @@ class Parser
                     $value = null;
                 } elseif (ctype_digit($value)) {
                     $value = (int)$value;
-                } elseif (is_numeric($numeric = str_replace(array('.', ','), array('', '.'), $value))) {
+                } elseif (is_numeric($numeric = str_replace(['.', ','], ['', '.'], $value))) {
                     $value = (float)$numeric;
                 }
             });
@@ -90,10 +90,14 @@ class Parser
             list($day, $month, $year) = explode('/', $row['date']);
             list($hour, $minute, $second) = explode(':', $row['time']);
 
-            $row['datetime'] = new \DateTime(
-                "$year-$month-${day}T$hour:$minute:$second",
-                new \DateTimeZone($row['timeZone'])
-            );
+            try {
+                $row['datetime'] = new \DateTime(
+                    "$year-$month-${day}T$hour:$minute:$second",
+                    new \DateTimeZone($row['timeZone'])
+                );
+            } catch (\Exception $e) {
+                throw new \LogicException($e->getMessage(), $e->getCode(), $e);
+            }
 
             unset($row['date'], $row['time'], $row['timeZone']);
 

@@ -29,13 +29,13 @@ class ParserTest extends TestCase
 
     public function testParseProvider()
     {
-        return array(
-            array('basic'), // https://raw.githubusercontent.com/cmbuckley/paypal-history/master/test/etc/csv/basic.csv
-            array('example1'),
-            array('example2'),
-            array('SampleFile'), // from https://raw.githubusercontent.com/mrjcleaver/paypal2kashoo
-            array('SampleFile.csv-output-2011-09-02'), // from https://raw.githubusercontent.com/mrjcleaver/paypal2kashoo
-        );
+        return [
+            ['basic'], // https://raw.githubusercontent.com/cmbuckley/paypal-history/master/test/etc/csv/basic.csv
+            ['example1'],
+            ['example2'],
+            ['SampleFile'], // from https://raw.githubusercontent.com/mrjcleaver/paypal2kashoo
+            ['SampleFile.csv-output-2011-09-02'], // from https://raw.githubusercontent.com/mrjcleaver/paypal2kashoo
+        ];
     }
 
     /**
@@ -45,7 +45,7 @@ class ParserTest extends TestCase
     {
         $parser = new Parser(new CsvHeaders());
 
-        $this->expectException('Amouhzi\PaypalCsvParser\InvalidPaypalCsvFile');
+        $this->expectedException(InvalidPaypalCsvFile::class);
 
         $parser->parse(__DIR__ . '/stubs/invalid-example.csv');
     }
@@ -60,14 +60,14 @@ class ParserTest extends TestCase
     public function testSupportsShouldThrowExceptionWhenArgumentPassedIsNotString()
     {
         $parser = new Parser(new CsvHeaders());
-        $this->expectException('InvalidArgumentException');
+        $this->expectedException(\InvalidArgumentException::class);
         $parser->supports(123);
     }
 
     public function testSupportsShouldThrowExceptionWhenArgumentPassedIsNotValidFile()
     {
         $parser = new Parser(new CsvHeaders());
-        $this->expectException('InvalidArgumentException');
+        $this->expectedException(\InvalidArgumentException::class);
         $parser->supports('FILEPATH');
     }
 
@@ -77,7 +77,7 @@ class ParserTest extends TestCase
     public function testParseShouldThrowExceptionWhenArgumentPassedIsNotString()
     {
         $parser = new Parser(new CsvHeaders());
-        $this->expectException('InvalidArgumentException');
+        $this->expectedException(\InvalidArgumentException::class);
         $parser->parse(123);
     }
 
@@ -87,11 +87,11 @@ class ParserTest extends TestCase
     public function testParseShouldThrowExceptionWhenArgumentPassedIsNotValidFile()
     {
         $parser = new Parser(new CsvHeaders());
-        $this->expectException('InvalidArgumentException');
+        $this->expectedException(\InvalidArgumentException::class);
         $parser->parse('FILEPATH');
     }
 
-    public function expectException($name)
+    public function expectedException($name)
     {
         if (method_exists(get_parent_class($this), 'expectException')) {
             parent::expectException($name);

@@ -2,8 +2,8 @@
 
 use Amouhzi\PaypalCsvParser\Statement;
 
-return [
-    [
+return array(
+    array(
         'name' => 'TEST TRANSACTION - Shopping Cart Payment Sent -  - Martin@Cleaver.org - 6K338567NB388074T - PayPal balance - Shopping Cart - ',
         'type' => Statement::TYPE_SHOPPING_CART_PAYMENT_SENT,
         'status' => Statement::STATUS_COMPLETED,
@@ -70,8 +70,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    [
+    ),
+    array(
         'name' => '10 USD from CAD (TEST TRANSACTION/6K338567NB388074T) at -10.6CAD / 10USD',
         'type' => Statement::TYPE_CURRENCY_CONVERSION,
         'status' => Statement::STATUS_COMPLETED,
@@ -138,5 +138,5 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-];
+    ),
+);

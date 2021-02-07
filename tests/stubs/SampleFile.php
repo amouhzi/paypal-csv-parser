@@ -2,8 +2,8 @@
 
 use Amouhzi\PaypalCsvParser\Statement;
 
-return [
-    [
+return array(
+    array(
         'name' => 'TEST TRANSACTION',
         'type' => 'Shopping Cart Payment Sent',
         'status' => Statement::STATUS_COMPLETED,
@@ -70,8 +70,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    [
+    ),
+    array(
         'name' => 'From Canadian Dollar',
         'type' => Statement::TYPE_CURRENCY_CONVERSION,
         'status' => Statement::STATUS_COMPLETED,
@@ -138,8 +138,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    [
+    ),
+    array(
         'name' => 'To U.S. Dollar',
         'type' => Statement::TYPE_CURRENCY_CONVERSION,
         'status' => Statement::STATUS_COMPLETED,
@@ -206,5 +206,5 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-];
+    ),
+);

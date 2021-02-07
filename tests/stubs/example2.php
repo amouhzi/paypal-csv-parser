@@ -2,8 +2,8 @@
 
 use Amouhzi\PaypalCsvParser\Statement;
 
-return [
-    [
+return array(
+    array(
         'name' => null,
         'type' => 'Virement par carte bancaire standard',
         'status' => Statement::STATUS_COMPLETED,
@@ -70,5 +70,5 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ]
-];
+    )
+);

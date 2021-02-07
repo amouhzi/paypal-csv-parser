@@ -31,7 +31,7 @@ class Parser
         }
 
         $file = fopen($filePath, 'rb');
-        $line = $this->getFirstLine($file) ?: [];
+        $line = $this->getFirstLine($file) ?: array();
         fclose($file);
 
         return $this->csvHeaders->isValid($line);
@@ -63,7 +63,7 @@ class Parser
 
         $file = fopen($filePath, 'rb');
 
-        $data = [];
+        $data = array();
 
         $headers = $this->csvHeaders->getHeaders($this->getFirstLine($file));
         $countHeaders = count($headers);
@@ -76,7 +76,7 @@ class Parser
                     $value = null;
                 } elseif (ctype_digit($value)) {
                     $value = (int)$value;
-                } elseif (is_numeric($numeric = str_replace(['.', ','], ['', '.'], $value))) {
+                } elseif (is_numeric($numeric = str_replace(array('.', ','), array('', '.'), $value))) {
                     $value = (float)$numeric;
                 }
             });

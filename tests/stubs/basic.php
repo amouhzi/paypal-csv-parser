@@ -2,8 +2,8 @@
 
 use Amouhzi\PaypalCsvParser\Statement;
 
-return [
-    0 => [
+return array(
+    0 => array(
         'name' => 'Foo Company',
         'type' => Statement::TYPE_SUBSCRIPTION_PAYMENT_SENT,
         'status' => Statement::STATUS_COMPLETED,
@@ -70,8 +70,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    1 => [
+    ),
+    1 => array(
         'name' => 'Credit Card',
         'type' => Statement::TYPE_CHARGE_FROM_CREDIT_CARD,
         'status' => Statement::STATUS_COMPLETED,
@@ -138,8 +138,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    2 => [
+    ),
+    2 => array(
         'name' => 'ACME PLC',
         'type' => Statement::TYPE_PAYPAL_EXPRESS_CHECKOUT_PAYMENT_SENT,
         'status' => Statement::STATUS_COMPLETED,
@@ -206,8 +206,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    3 => [
+    ),
+    3 => array(
         'name' => 'Credit Card',
         'type' => Statement::TYPE_CHARGE_FROM_CREDIT_CARD,
         'status' => Statement::STATUS_COMPLETED,
@@ -274,8 +274,8 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-    4 => [
+    ),
+    4 => array(
         'name' => 'ACME PLC',
         'type' => Statement::TYPE_ORDER,
         'status' => Statement::STATUS_COMPLETED,
@@ -342,5 +342,5 @@ return [
         'payFlowTransactionNumber' => null,
         'tip' => null,
         'reduction' => null,
-    ],
-];
+    ),
+);

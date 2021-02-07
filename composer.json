@@ -1,0 +1,32 @@
+{
+    "name": "amouhzi/paypal-csv-parser",
+    "description": "Parse PayPal CSV exports.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hassan Amouhzi",
+            "email": "hassan.amouhzi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7 | ^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amouhzi\\PaypalCsvParser\\": "src"
+        },
+        "files": ["polyfill.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amouhzi\\PaypalCsvParser\\Test\\": "tests"
+        }
+    },
+    "suggest": {
+        "ext-ctype": "Enables faster processing of character classification using ctype functions."
+    }
+}

@@ -23,19 +23,3 @@ if (!function_exists('ctype_digit')) {
         return \is_string($input) && '' !== $input && !preg_match('/\D/', $input);
     }
 }
-
-if (!function_exists('each')) {
-    function each(array &$array) {
-        $key = key($array);
-
-        if (!$key) {
-            return false;
-        }
-
-        $value = current($array);
-
-        next($array);
-
-        return [$key, $value];
-    }
-}

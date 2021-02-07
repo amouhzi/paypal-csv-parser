@@ -28,4 +28,4 @@ jobs:
               run: composer install $DEFAULT_COMPOSER_FLAGS
 
             - name: PHP Unit tests for PHP
-              run: vendor/bin/phpunit --bootstrap vendor/autoload.php --whitelist src tests
+              run: vendor/bin/phpunit --bootstrap vendor/autoload.php tests
